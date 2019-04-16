@@ -9,9 +9,16 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    //Mark: Properties
+    
+    @IBOutlet weak var textFieldOutlet: UITextField!
+    @IBOutlet weak var mealNameLabel: UILabel!
+    @IBOutlet weak var setDefaultButton: UIButton!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("Screen loaded")
         // Do any additional setup after loading the view, typically from a nib.
     }
 
