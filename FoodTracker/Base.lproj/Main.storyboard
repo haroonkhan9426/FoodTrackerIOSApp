@@ -37,6 +37,9 @@
                                         <rect key="frame" x="0.0" y="66.5" width="166" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <state key="normal" title="Set default label text"/>
+                                        <connections>
+                                            <action selector="setDefaultButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="55T-zq-Aq0"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -54,8 +57,8 @@
                     </view>
                     <connections>
                         <outlet property="mealNameLabel" destination="v6y-gH-T4z" id="Zy8-pl-PC9"/>
+                        <outlet property="nameTextField" destination="yib-zV-U4Q" id="hHm-Yb-ntB"/>
                         <outlet property="setDefaultButton" destination="q07-93-iiG" id="8FD-GP-LZd"/>
-                        <outlet property="textFieldOutlet" destination="yib-zV-U4Q" id="sF1-mS-IFm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
