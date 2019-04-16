@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -19,7 +20,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="yBU-58-Rmd">
-                                <rect key="frame" x="20" y="40" width="335" height="100.5"/>
+                                <rect key="frame" x="20" y="40" width="335" height="413.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meal Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v6y-gH-T4z">
                                         <rect key="frame" x="0.0" y="0.0" width="86.5" height="20.5"/>
@@ -35,16 +36,34 @@
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q07-93-iiG">
                                         <rect key="frame" x="0.0" y="66.5" width="166" height="34"/>
+                                        <gestureRecognizers/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <state key="normal" title="Set default label text"/>
                                         <connections>
                                             <action selector="setDefaultButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="55T-zq-Aq0"/>
+                                            <outletCollection property="gestureRecognizers" destination="mRs-nS-Plo" appends="YES" id="LFp-lt-iSv"/>
+                                            <outletCollection property="gestureRecognizers" destination="mRs-nS-Plo" appends="YES" id="ULc-hV-SfQ"/>
                                         </connections>
                                     </button>
+                                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="320" verticalHuggingPriority="320" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="320" image="Image" translatesAutoresizingMaskIntoConstraints="NO" id="V6Z-a4-hFf">
+                                        <rect key="frame" x="0.0" y="108.5" width="305" height="305"/>
+                                        <gestureRecognizers/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="V6Z-a4-hFf" secondAttribute="height" multiplier="1:1" id="fDz-z3-9ub"/>
+                                        </constraints>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="mRs-nS-Plo" appends="YES" id="QwX-RF-kwO"/>
+                                        </connections>
+                                    </imageView>
                                 </subviews>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="yib-zV-U4Q" secondAttribute="trailing" id="dh5-Zu-665"/>
+                                    <constraint firstAttribute="trailing" secondItem="V6Z-a4-hFf" secondAttribute="trailing" constant="30" id="ssO-eB-MC9"/>
                                 </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="mRs-nS-Plo" appends="YES" id="538-dZ-gv8"/>
+                                </connections>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -58,12 +77,21 @@
                     <connections>
                         <outlet property="mealNameLabel" destination="v6y-gH-T4z" id="Zy8-pl-PC9"/>
                         <outlet property="nameTextField" destination="yib-zV-U4Q" id="hHm-Yb-ntB"/>
+                        <outlet property="photoImageView" destination="V6Z-a4-hFf" id="de2-KQ-b7Q"/>
                         <outlet property="setDefaultButton" destination="q07-93-iiG" id="8FD-GP-LZd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="mRs-nS-Plo">
+                    <connections>
+                        <action selector="selectImageFromPhotoLibrary:" destination="BYZ-38-t0r" id="9iJ-r7-3ut"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="37.600000000000001" y="31.934032983508249"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Image" width="540" height="540"/>
+    </resources>
 </document>
